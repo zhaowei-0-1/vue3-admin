@@ -7,6 +7,7 @@ import NewsAdd from '../views/newsManage/NewsAdd.vue'
 import NewsList from '../views/newsManage/NewsList.vue'
 import ProductAdd from '../views/productManage/ProductAdd.vue'
 import ProductList from '../views/productManage/ProductList.vue'
+import NotFound from '../views/notFound/NotFound.vue'
 const RoutesConfig = [
     {
         path: '/index',
@@ -41,6 +42,15 @@ const RoutesConfig = [
         path: '/productManage/productlist',
         component: ProductList,
     },
+    {
+        path: '/',
+        redirect: '/index',
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'Notfound',
+        component: NotFound
+    }
 ]
 // 导出
 export default RoutesConfig
