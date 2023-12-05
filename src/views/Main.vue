@@ -1,11 +1,16 @@
 <template>
-  <div class="home">
-   <div>nav</div>
-   <div>side</div>
-   <router-view></router-view>
-  </div>
+  <el-container>
+    <SideMenu/>
+    <el-container direction="vertical">
+     <TopHeader/>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 
-<script>
-
+<script setup>
+import TopHeader from '../components/Main/TopHeader.vue';
+import SideMenu from '../components/Main/SideMenu.vue';
 </script>

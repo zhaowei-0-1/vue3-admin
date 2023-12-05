@@ -8,10 +8,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "element-plus": "^2.4.2",
+    "element-plus": "^2.4.3",
+    "unplugin-element-plus": "^0.8.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
-    "vuex": "^4.1.0"
+    "vuex": "^4.1.0",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
