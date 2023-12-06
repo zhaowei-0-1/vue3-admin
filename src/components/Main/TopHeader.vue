@@ -1,32 +1,31 @@
 <template>
-    <!-- <el-header>
-        <el-button @click="handleCollapsed">click</el-button>
-        Header</el-header> -->
-    <div class="left">
-        <el-icon @click="handleCollapsed">
-            <Menu />
-            <span style="margin-left: 10px">vue3后台管理系统</span>
-        </el-icon>
-    </div>
+    <el-header>
+        <div class="left">
+            <el-icon @click="handleCollapsed">
+                <Menu />
+            </el-icon>
+            <span style="margin-left: 20px">vue3后台管理系统</span>
+        </div>
 
-    <div class="right">
-        <span>欢迎 admin 回来</span>
-        <el-dropdown>
-            <span class="el-dropdown-link">
-                <el-icon :size="30" color="white">
-                    <User />
-                </el-icon>
+        <div class="right">
+            <span>欢迎 admin 回来</span>
+            <el-dropdown>
+                <span class="el-dropdown-link">
+                    <el-icon :size="30" color="white">
+                        <User />
+                    </el-icon>
 
-            </span>
-            <template #dropdown>
-                <el-dropdown-menu>
-                    <el-dropdown-item @click="handleCenter">个人中心</el-dropdown-item>
-                    <el-dropdown-item @click="handleLogOut">退出</el-dropdown-item>
+                </span>
+                <template #dropdown>
+                    <el-dropdown-menu>
+                        <el-dropdown-item @click="handleCenter">个人中心</el-dropdown-item>
+                        <el-dropdown-item @click="handleLogOut">退出</el-dropdown-item>
 
-                </el-dropdown-menu>
-            </template>
-        </el-dropdown>
-    </div>
+                    </el-dropdown-menu>
+                </template>
+            </el-dropdown>
+        </div>
+    </el-header>
 </template>
 <script setup>
 import { useStore } from 'vuex'
@@ -64,12 +63,17 @@ const handleLogOut = () => {
 
 .left,
 .right {
+    display: flex;
+}
+
+.left{
     i {
-        display: flex;
+        // 居中
+        margin: auto;
     }
 }
 
-.left {
+.right {
     .el-dropdown {
         margin: auto;
         cursor: pointer;

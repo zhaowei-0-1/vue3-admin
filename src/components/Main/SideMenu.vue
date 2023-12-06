@@ -1,4 +1,3 @@
-<!-- 侧边栏 -->
 <template>
     <el-aside :width="$store.state.iscollapsed ? '64px' : '120px'">
         <!-- 侧边栏折叠collapse vuex状态存储 通过 store.state 来获取状态对象  -->

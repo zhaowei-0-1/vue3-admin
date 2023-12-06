@@ -16,6 +16,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import { useRouter } from 'vue-router'
+import axios from 'axios'
 // 表单的响应式对象
 const loginForm = reactive({
     username: "",
@@ -37,7 +38,10 @@ const submitForm = () => {
         // console.log(valid, "valid")
         if (valid) {
             // console.log(loginForm, "===")
-            localStorage.setItem("token", "admin")
+            localStorage.setItem("token", "admin");
+            axios.get("/users").then(res => {
+                console.log(res.data)
+            })
             router.push("/index")
 
         }

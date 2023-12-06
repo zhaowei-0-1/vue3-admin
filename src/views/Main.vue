@@ -8,6 +8,9 @@
       </el-main>
     </el-container>
   </el-container>
+  <!-- <div>navbar</div>
+  <div>sidebar</div>
+  <router-view></router-view> -->
 </template>
 
 <script setup>

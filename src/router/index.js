@@ -36,15 +36,15 @@ router.beforeEach((to, from, next) => {
     // next(): 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed (确认的)。
     next();
   } else {
-    // 授权(已登录)next()
-    // 未授权（未登录），重定向到login
+    //     // 授权(已登录)next()
+    //     // 未授权（未登录），重定向到login
     if (!localStorage.getItem("token")) {
       next({
-        path: '/login',
+        path: "/login",
       })
     } else {
       if (!store.state.isGetterRouter) {
-        configRouter();
+        ConfigRouter();
         next({
           path: to.fullPath,
         });
@@ -55,12 +55,11 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-const configRouter = () => {
+const ConfigRouter = () => {
   RoutesConfig.forEach(item => {
-    router.addRoute("Main", item)
+    router.addRoute("main", item)
   });
   // 改变isGetterRouter =true
-
   store.commit("changeGetterRouter", true)
 };
 // 动态 给Main 加了一个子路由
